@@ -13,7 +13,7 @@ import {
 import { Card, CardContent } from "../ui/card";
 import { Badge } from "../ui/badge";
 import { Star, MapPin, ThumbsUp, MessageSquare } from "lucide-react";
-import { buttonVariants } from "../ui/button";
+import { buttonVariants, Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 
 export function VendorListings(props) {
@@ -123,22 +123,22 @@ export function VendorListings(props) {
                     </div>
                   </div>
                   <div className="flex flex-col gap-2">
-                    <Link
-                      className={`${buttonVariants({
-                        variant: "secondary",
-                      })} bg-primary-500`}
+                    <Button
+                      variant="secondary"
+                      className={`bg-primary-500`}
+                      disabled="true"
                     >
                       View Profile
-                    </Link>
-                    <Link
+                    </Button>
+                    <Button
+                      variant="secondary"
+                      disabled="true"
                       className={`${cn(
-                        `${buttonVariants({
-                          variant: "secondary",
-                        })} text-black bg-white hover:bg-neutral-100`
+                        `text-black bg-white hover:bg-neutral-100`
                       )}`}
                     >
                       Contact
-                    </Link>
+                    </Button>
                   </div>
                 </div>
               </div>

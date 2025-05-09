@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { buttonVariants } from "./ui/button";
+import { buttonVariants, Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
 
 export function SolarNeedSection() {
@@ -27,14 +27,9 @@ export function SolarNeedSection() {
             Start Assessment
             <ArrowRight className="aspect-square w-6" />
           </Link>
-          <Link
-            to="learn-more"
-            className={`${buttonVariants({
-              variant: "outline",
-            })}`}
-          >
+          <Button to="learn-more" variant="outline" disabled="true">
             Learn More
-          </Link>
+          </Button>
         </div>
       </div>
       <div className="grid place-items-center">

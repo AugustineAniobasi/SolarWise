@@ -70,6 +70,14 @@ export function MarketplaceFilters(props) {
   };
 
   const resetFilters = () => {
+    setServiceTypes((prev) =>
+      prev.map((service) => ({ name: service.name, isChecked: false }))
+    );
+    setRatings((prev) =>
+      prev.map((rating) => ({ value: rating.value, isChecked: false }))
+    );
+    setLocationQuery("");
+
     props.setFilterObj((prev) => ({ ...prev, filters: null }));
   };
 
@@ -103,7 +111,7 @@ export function MarketplaceFilters(props) {
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem value="price">
+        {/* <AccordionItem value="price">
           <AccordionTrigger className="text-lg">Price Range</AccordionTrigger>
           <AccordionContent>
             <div className="space-y-4">
@@ -119,7 +127,7 @@ export function MarketplaceFilters(props) {
               </div>
             </div>
           </AccordionContent>
-        </AccordionItem>
+        </AccordionItem> */}
 
         <AccordionItem value="rating">
           <AccordionTrigger className="text-lg">Rating</AccordionTrigger>

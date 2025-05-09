@@ -10,6 +10,7 @@ import AboutUs from "./pages/about-us";
 import Marketplace from "./pages/marketplace";
 import SolarFact from "./pages/solar-fact";
 import Assessment from "./pages/assessment";
+import RegisterPage from "./pages/register";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,7 @@ const router = createBrowserRouter([
         Component: Marketplace,
       },
       { path: "about-us", Component: AboutUs },
+      { path: "register", Component: RegisterPage },
     ],
   },
 ]);

@@ -1,10 +1,12 @@
 import { useLoaderData, useParams, Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import data from "../../db.json";
 
 import { SolarFactDetail } from "@components/solar-fact/solar-fact-detail";
 
 function SolarFact() {
-  const { facts } = useLoaderData();
+  var { facts } = useLoaderData();
+  facts = facts || data["facts-content"];
   const { factId } = useParams();
 
   const fact = facts.find((fact) => fact.id === factId);

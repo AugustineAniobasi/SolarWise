@@ -51,12 +51,13 @@ export function LocationStep(props) {
 
   useEffect(() => {
     if (country && sunlightData[country]) {
+      console.log(sunlightData[country]);
       setSunlightHours(sunlightData[country]);
       props.updateData({
         location: {
           city,
           country,
-          sunlightHours,
+          sunlightHours: sunlightData[country],
         },
       });
     }
@@ -95,7 +96,10 @@ export function LocationStep(props) {
         </div>
         <div className="space-y-2">
           <Label htmlFor="country">Country</Label>
-          <Select onValueChange={(value) => handleCountryChange(value)}>
+          <Select
+            defaultValue={country}
+            onValueChange={(value) => handleCountryChange(value)}
+          >
             <SelectTrigger id="country" className="w-full">
               <SelectValue placeholder="Select your country" />
             </SelectTrigger>
